@@ -25,31 +25,31 @@ trait Flyable {
 
 //Car class Extended the Vehicle trait with Drivable trait
 class Car extends Vehicle with Drivable {
-  def move: String = s"Car can be $driven"
+  override def move: String = s"Car can be $driven"
 }
 
 //Boat class Extended the Vehicle trait with Sailable trait
 class Boat extends Vehicle with Sailable {
-  def move: String = s"Boat can be $sail"
+  override def move: String = s"Boat can be $sail"
 }
 
 //Aeroplane class Extended the Vehicle trait with Flyable trait
 class Aeroplane extends Vehicle with Flyable {
-  def move: String = s"Aeroplane can be $flown"
+  override def move: String = s"Aeroplane can be $flown"
 }
 
 //Flying Car class Extended the Vehicle class with Drivable and Flyable trait
 class FlyingCar extends Vehicle with Drivable with Flyable {
-  def move: String = s"Flying Car can be $driven and $flown"
+  override def move: String = s"Flying Car can be $driven and $flown"
 }
 
 //Hovercraft class Extended the Vehicle trait with Sailable and Drivable trait
 class Hovercraft extends Vehicle with Sailable with Drivable {
-  def move: String = s"Hovercraft can be $sail and $driven"
+  override def move: String = s"Hovercraft can be $sail and $driven"
 }
 
 // Singleton object main start from this object
-object VehicleTrait extends App {
+object ClassHierarchy extends App {
   val drivenOnly = new Car
   val sailedOnly = new Boat
   val flownOnly = new Aeroplane
